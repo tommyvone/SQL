@@ -1,0 +1,33 @@
+--Create a Bikes Store Database and Stats
+
+CREATE TABLE bikes (id INTEGER PRIMARY KEY, name TEXT, color TEXT ,price INTEGER ,seasonal TEXT);
+
+INSERT INTO bikes VALUES (1, "RockerA", "red", "100.00", "winter");
+INSERT INTO bikes VALUES (2, "RockerB", "white", "150.00", "summer");
+INSERT INTO bikes VALUES (3, "RockerC", "red", "120.00", "fall");
+INSERT INTO bikes VALUES (4, "RockerD", "white", "105.00", "summer");
+INSERT INTO bikes VALUES (5, "RockerE", "blue", "132.00", "winter");
+INSERT INTO bikes VALUES (6, "RockerF", "yellow", "135.00", "spring");
+INSERT INTO bikes VALUES (7, "RockerG", "pink", '185.00', "summer");
+INSERT INTO bikes VALUES (8, "RockerH", "white", "110.00", "fall");
+INSERT INTO bikes VALUES (9, "RockerI", "blue", "190.00", "summer");
+INSERT INTO bikes VALUES (10, "RockerJ", "red", "130.00", "winter");
+INSERT INTO bikes VALUES (11, "RockerK", "black", "125.00", "summer");
+INSERT INTO bikes VALUES (12, "RockerL", "red", "152.00", "fall");
+INSERT INTO bikes VALUES (13, "RockerM", "yellow", "135.00", "spring");
+INSERT INTO bikes VALUES (14, "RockerN", "blue", "285.00", "winter");
+INSERT INTO bikes VALUES (15, "RockerO", "yellow", "185.00", "winter");
+
+--display the database ordered by price. 
+ SELECT * FROM bikes
+ ORDER BY price asc;
+ 
+--what is the avg price of items in the season section? 
+SELECT seasonal,AVG(price) FROM bikes
+WHERE seasonal = 'summer';
+
+--what are the most 5 expensive bikes? 
+SELECT name, price
+FROM bikes
+ORDER BY name asc
+LIMIT 5;
