@@ -1,7 +1,11 @@
 /* Create table about the famous martial art star */
 
 CREATE TABLE star
-(id INTEGER PRIMARY KEY,actor TEXT,age INTEGER,birth_place TEXT,movie TEXT);
+       (id INTEGER PRIMARY KEY,
+       actor TEXT,
+       age INTEGER,
+       birth_place TEXT,
+       movie TEXT);
 
 INSERT INTO star
 (actor,age,birth_place,movie)
@@ -28,7 +32,11 @@ VALUES ("Jet Li","59","Beijing, China","Romeo Must Die");
 /******/
 
 CREATE TABLE movies
-(id INTEGER PRIMARY KEY,star_id INTEGER,movie TEXT,release_year INTEGER,actor TEXT);
+            (id INTEGER PRIMARY KEY,
+            star_id INTEGER,
+            movie TEXT,
+            release_year INTEGER,
+            actor TEXT);
 
 INSERT INTO movies
 (star_id,movie,release_year,actor)
@@ -50,7 +58,10 @@ INSERT INTO movies
 (star_id,movie,release_year,actor)
 VALUES ( 5,"Romeo Must Die","2000","Jet Li");
 
-/**/
+
+
+/*Queries that uses join movie star and movie they in.*/
+
 SELECT a.actor, b.movie FROM star a
 JOIN movies b
 ON a.id = b.star_id;
