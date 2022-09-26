@@ -1,0 +1,56 @@
+/* Create table about the famous martial art star */
+
+CREATE TABLE star
+(id INTEGER PRIMARY KEY,actor TEXT,age INTEGER,birth_place TEXT,movie TEXT);
+
+INSERT INTO star
+(actor,age,birth_place,movie)
+VALUES("Bruce Lee","82","San Francisco, USA","Enter the Dragon");
+
+INSERT INTO star 
+(actor,age,birth_place,movie)
+VALUES ("Donie Yen","59","Guangzhou, China","IP man");
+
+INSERT INTO star 
+(actor,age,birth_place,movie)
+VALUES ("Jack Chan","68","British, Hong Kong","Rush hour");
+
+INSERT INTO star 
+(actor,age,birth_place,movie)
+VALUES ("Tony Jaa","46","Surin, Thailand","Ong Bak 2");
+
+INSERT INTO star
+(actor,age,birth_place,movie)
+VALUES ("Jet Li","59","Beijing, China","Romeo Must Die");
+
+/******/
+/* Create table about the famous martial art star movies */
+/******/
+
+CREATE TABLE movies
+(id INTEGER PRIMARY KEY,star_id INTEGER,movie TEXT,release_year INTEGER,actor TEXT);
+
+INSERT INTO movies
+(star_id,movie,release_year,actor)
+VALUES ( 1,"Enter The Dragon","1973","Brue Lee");
+
+INSERT INTO movies
+(star_id,movie,release_year,actor)
+VALUES ( 2,"IP Man","1998","Donnie Yen");
+
+INSERT INTO movies
+(star_id,movie,release_year,actor)
+VALUES ( 3,"Rush Hours","1998","Jack Chan");
+
+INSERT INTO movies
+(star_id,movie,release_year,actor)
+VALUES ( 4,"Ong Bak 2","2003","Tony Jaa");
+
+INSERT INTO movies
+(star_id,movie,release_year,actor)
+VALUES ( 5,"Romeo Must Die","2000","Jet Li");
+
+/**/
+SELECT a.actor, b.movie FROM star a
+JOIN movies b
+ON a.id = b.star_id;
