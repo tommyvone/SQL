@@ -1,0 +1,42 @@
+/* Employee company profile SQL  */
+
+CREATE TABLE employees (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        employee_id INTEGER,
+        first_name TEXT,
+        last_name TEXT,
+        phone_number INTEGER,
+        email TEXT);
+
+/*Inserts few data.*/ 
+
+INSERT INTO employees
+(employee_id,first_name,last_name,phone_number,email)
+VALUES (1,'Max','Jones','360 975 2343','maxjones@yahoo.com');
+
+INSERT INTO employees 
+(employee_id,first_name,last_name,phone_number,email)
+VALUES (2,'Tom','Guner','320 275 2243','tommyguner@ymail.com');
+
+INSERT INTO employees
+(employee_id,first_name,last_name,phone_number,email)
+VALUES (3,'Aj','Jackson','733 935 2303','ajjackson@ymail.com');
+
+INSERT INTO employees
+(employee_id,first_name,last_name,phone_number,email)
+VALUES (4,'Jacson','Nelson','704 945 2355','njacson@ymail.com');
+
+INSERT INTO employees
+(employee_id,first_name,last_name,phone_number,email)
+VALUES (5,'vone','boun','704 985 2308','njacson@ymail.com');
+ 
+/*Updates 1 row of data.*/
+
+UPDATE employees
+SET employee_id = '1', first_name = 'Tommy', last_name = 'Spiner', phone_number ='360 975 2310', email='golfertommy@gmail'
+WHERE employee_id = 1;
+
+/*Deletes 1 row of data*/
+
+DELETE FROM employees WHERE employee_id = 5;
+
